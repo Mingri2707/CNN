@@ -1,0 +1,5 @@
+Yolo hoạt động là chia ảnh thành cái lưới sau đó trong 1 lần nó sẽ dự đoán khung và xác suất vật thể để nó có thể phát hiện đc đâu là biển đâu là biển báo , quảng cáo.
+lấy cái dữ liệu của Thành cắt ra đó xong train cho nó biết đc đâu là biển đâu là rác , trong code có 1 cái tâm đắc nhất là patience=20 nó gọi là early stopping để train nó có thể dừng và lưu best.pt ở mức thông minh nhất, chống overfit .
+khi train best xong muốn test xem nó có ok không thì sẽ nạp file best vào xong viết code kiểm tra bằng came hoặc đưa ảnh vào cx đc tùy mình thôi, cho ngưỡng conf khoảng 0.6 là 60% để nó loại đi các cái ko chắc chắn. Khi yolo xác định đc biển thì nó sẽ trả về x1 x2 y1 y2 tạo 1 khung bao quanh biển để xác định . sau đó cắt nó ra , từ cái ảnh có cả xe ô tô hay xe máy bây h cắt ra thành 1 cái ảnh chỉ có biển số rõ ràng thôi.
+
+Test vs TV4 thì là bên TV4 có cái class segmenter cho nó vào để nó bóc tách kí tự, lúc đầu biển bình thường, sau binary thành trắng đen, sau lại thành biển mà bỏ hết mấy cái ốc vít hay bụi bẩn đi, rồi đến phần characte thì nó xác định số chữ sau rồi cắt ra thôi. Cắt đc ra thì đúng
